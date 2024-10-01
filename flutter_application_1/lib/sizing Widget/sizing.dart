@@ -7,17 +7,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Image Row Example')),
+        appBar: AppBar(title: const Text('Image Column Example')),
         body: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset(
-                'assets/image/logo.png',
-                width: 100,
+              Expanded(
+                child: Image.asset(
+                  'assets/image/logo.png',
+                ),
               ),
-              Image.asset('assets/image/logo.png', width: 100),
-              Image.asset('assets/image/logo.png', width: 100),
+              Expanded(
+                child: Image.asset('assets/image/logo.png'),
+              ),
+              Expanded(
+                child: Image.asset('assets/image/logo.png'),
+              ),
             ],
           ),
         ),

@@ -9,15 +9,22 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Image Column Example')),
         body: Center(
-          child: Column(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset(
-                'assets/image/logo.png',
-                width: 50,
+              Expanded(
+                child: Image.asset(
+                  'assets/image/logo.png',
+                  width: 50,
+                ),
               ),
-              Image.asset('assets/image/logo.png', width: 50),
-              Image.asset('assets/image/logo.png', width: 50),
+              Expanded(
+                flex: 2,
+                child: Image.asset('assets/image/logo.png'),
+              ),
+              Expanded(
+                child: Image.asset('assets/image/logo.png'),
+              ),
             ],
           ),
         ),
